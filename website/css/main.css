@@ -1,0 +1,35 @@
+.m-form-table tr td{
+	padding: 10px; 
+}
+
+.m-form-wrap-400{
+  width: 420px;
+  margin: 40px auto;
+}
+
+.m-footer-text{
+  margin-top: 15px;
+  color: #999;
+}
+
+.m-header-login-input {
+	margin-right: 10px;
+}
+
+/*Dark Header CSS*/
+
+    .m-navbar-dark .navbar-brand{
+      color: #fff;
+    }
+    .m-navbar-dark .navbar-nav > li > a {
+      color: #aaa;
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+      color: #fff;
+    }
+
+.m-side-pannel{
+	background-color: #3C3C3C;
+	height: 100%;
+}
