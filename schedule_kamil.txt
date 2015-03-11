@@ -1,0 +1,5 @@
+Schedule and deliverable:
+change the layout of main page to UIC theme - Thurs 03/12 by 11pm (estimate: 2 hrs)
+Research a good font for the headers etc. - Fri 03/13 by 11pm (estimate: 3 hrs)
+Try to implement the UIC theme onto other pages - Fri 03/13 by 1am (estimate: 2 hrs)
+
