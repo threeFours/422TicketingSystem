@@ -1,0 +1,8 @@
+Schedule and deliverable:
+
+	⁃	draft HTML page for the project create-ticket.html -- Fri 03/13 by 12pm (estimate: 4 hrs)
+
+	⁃	parse form data with php and output data to prove it worked -- Fri 03/13 by 4pm (estimate: 1 hr)
+
+
+
