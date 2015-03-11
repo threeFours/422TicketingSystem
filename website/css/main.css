@@ -1,3 +1,5 @@
+/*Header CSS*/
+
 #m-search{
 	margin-left: 100px;
 }
@@ -37,6 +39,20 @@
 	min-width: 300px;
 }
 
+/*Body CSS*/
+
+.btn-primary{
+	background-color: #ed2b2b;
+	border-color: #005;
+}
+
+.btn-primary:hover{
+	background-color: #C92222;
+}
+
+
+
+/*Footer CSS*/
 .m-pageFooter{
 	text-align: center;
 	width: 100%;
