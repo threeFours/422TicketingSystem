@@ -1,0 +1,4 @@
+Schedule and deliverable:
+menu layout for single ticket view -- Thurs 03/11 by 9pm (estimate: 1 hr)
+left side of ticket view with all ticket attributes -- Fri 03/13 by 9pm (estimate: 2 hrs)
+right side of ticket view with all ticket messages -- Sat 03/14 by 7pm (estimate: 2 hrs)
