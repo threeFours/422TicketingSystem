@@ -18,6 +18,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- <img src="img/uicbanner092809.png" width=100%%> -->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	
   </head>
   <body>
 

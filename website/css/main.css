@@ -55,6 +55,11 @@
 	overflow: scroll;
 }
 
+mark{
+	background-color: green;
+	color: white;
+}
+
 /*Footer CSS*/
 .m-pageFooter{
 	text-align: center;

@@ -16,11 +16,21 @@
 		<label>Creator</label>
 		<input type="text" class="form-control" name="creator">
 		<label>CC</label>
-		<input type="text" class="form-control" name="creator">
-		<label>Name</label>
-		<input type="text" class="form-control" name="creator">
-		<br><br>
-	</div>
+		<input type="text" class="form-control" name="cc">
+		<label>Ticket Name</label>
+		<input type="text" class="form-control" name="ticketName">
+		<label>Queue</label>
+		<input type="text" class="form-control" name="queue">
+		<label>Room</label>
+		<input type="text" class="form-control" name="room">
+		<label>Status</label>
+		<select class="form-control">
+			<option>New</option>
+			<option>Open</option>
+			<option>Resolved</option>
+		</select>
+		<br />
+	</div>	
 	<div class="col-sm-6">
 		<h2>Message</h2>
 		<hr><br><br>
