@@ -2,6 +2,12 @@
 <?php require_once('templates/header2.php'); ?>
 
 <!-- Content of page goes here -->
+
+<ol class="breadcrumb">
+  <li><a href="index.php">Home</a></li>
+  <li class="active">Create Ticket</li>
+</ol>
+
 <form>
 <div class="row">
 	<div class="col-sm-6">

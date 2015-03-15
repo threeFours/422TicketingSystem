@@ -1,6 +1,11 @@
 <!--Include the page header -->
 <?php require_once('templates/header2.php'); ?>
 
+<ol class="breadcrumb">
+  <li><a href="index.php">Home</a></li>
+  <li class="active">Queue</li>
+</ol>
+
 <form>
 <div class="row">
 	<div class="col-sm-6">

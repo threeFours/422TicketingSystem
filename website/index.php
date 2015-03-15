@@ -2,6 +2,9 @@
 <?php require_once('templates/header2.php'); ?>
 
 <!-- Content of page goes here -->
+<ol class="breadcrumb">
+  <li class="active">Home</li>
+</ol>
 <form method="post" action="create-ticket.php">
 <div class="row">
 	<div class="col-xs-12" style="text-align:leftr">
