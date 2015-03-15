@@ -60,6 +60,10 @@ mark{
 	color: white;
 }
 
+body{
+    overflow-y: hidden;
+}
+
 /*Footer CSS*/
 .m-pageFooter{
 	text-align: center;
