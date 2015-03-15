@@ -1,5 +1,5 @@
 <!--Include the page header -->
-<?php require_once('templates/header.php'); ?>
+<?php require_once('templates/header2.php'); ?>
 
 <!-- Content of page goes here -->
 <form>

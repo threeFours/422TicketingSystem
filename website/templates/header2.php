@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <img src="img/uicbanner092809.png" width=110%%>
+    <img src="img/uicbanner092809.png" width=100%%>
   </head>
   <body>
 
@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Ticketing System</a>
+          <a class="navbar-brand" href="index.php">Ticketing System</a>
         </div>
 
 

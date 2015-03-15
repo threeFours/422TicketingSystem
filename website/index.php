@@ -12,9 +12,30 @@
 <div class="row">
 	<div class="col-sm-6">
 		<h2>Incoming Tickets</h2>
+		<hr />
+		<div class="list-group">
+			<a href="ticket-view.php" class="list-group-item">
+			<h4 class="list-group-item-heading">TH 216 - Projector Flickering</h4>
+			</a>
+		</div>
 	</div>
 	<div class="col-sm-6">
 		<h2>Queues</h2>
+		<hr />
+		<div class="list-group">
+			<a href="queue-view.php" class="list-group-item">
+			<h4 class="list-group-item-heading">Classrooms</h4>
+			</a>
+			<a href="queue-view.php" class="list-group-item">
+			<h4 class="list-group-item-heading">Classrooms FM</h4>
+			</a>
+			<a href="queue-view.php" class="list-group-item">
+			<h4 class="list-group-item-heading">Webcheckout</h4>
+			</a>
+			<a href="queue-view.php" class="list-group-item">
+			<h4 class="list-group-item-heading">Service Request - CTI</h4>
+			</a>
+		</div>
 	</div>
 </div>
 </form>

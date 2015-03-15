@@ -50,7 +50,10 @@
 	background-color: #C92222;
 }
 
-
+#list-group-scrollable{
+	height:300px;
+	overflow: scroll;
+}
 
 /*Footer CSS*/
 .m-pageFooter{
