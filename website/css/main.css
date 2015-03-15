@@ -5,20 +5,20 @@
 }
 
 .navbar-inverse{
-	background-color: #000033;
+	background-color: #35638F;
 }
 
 .navbar-inverse .navbar-nav>.active>a{
-	background-color: #ed2b2b;
+	background-color: #A50302;
 }
 
 .navbar-inverse .navbar-brand{
-	color: #ed2b2b;
+	color: #fff;
 	font-size: 25px;
 }
 
 .navbar-inverse .navbar-brand:hover{
-	color: #ed2b2b;
+	color: #ddd;
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -31,7 +31,7 @@
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
-	background-color: #ed2b2b;
+	background-color: #A50302;
 	color: #fff;
 }
 
@@ -42,12 +42,12 @@
 /*Body CSS*/
 
 .btn-primary{
-	background-color: #ed2b2b;
-	border-color: #005;
+	background-color: #A50302;
+	border-color: #35638F;
 }
 
 .btn-primary:hover{
-	background-color: #C92222;
+	background-color: #A50302;
 }
 
 #list-group-scrollable{
