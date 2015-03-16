@@ -3,4 +3,3 @@ os: linux
 files:
   - source: website
     destination: /var/www/html
-hooks:
