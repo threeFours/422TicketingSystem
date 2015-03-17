@@ -69,6 +69,7 @@
 				
 				if(hour > 12){ amPm = "PM";}
 				if(hour > 12){ hour = hour - 12;}
+				if(minute < 10){ minute = '0'+ minute;}
 				
 				$("#list-group-scrollable").append("<a href=\"#\" class=\"list-group-item\"><h4 class=\"list-group-item-heading\">" + month + "/" + day + "/" + year + " " + hour + ":" + minute + " " + amPm + " - Alex Schlake</h4><p class=\"list-group-item-text\">" + message + "</p></a>");
 			});
