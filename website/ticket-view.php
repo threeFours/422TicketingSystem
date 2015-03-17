@@ -49,6 +49,22 @@
 			<h4 class="list-group-item-heading">3/14/2015 12:20 PM - Diego Sanchez</h4>
 			<p class="list-group-item-text">We received another report of the flickering. Further testing is required.</p>
 			</a>
+			<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">3/13/2015 4:36 PM - Alexander Schlake</h4>
+			<p class="list-group-item-text">An instructor reported the projector occasionally flickers when using the built-in PC source.</p>
+			</a>
+			<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">3/13/2015 5:20 PM - John McDermott</h4>
+			<p class="list-group-item-text">The flickering also occurs from all other sources.</p>
+			</a>
+			<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">3/14/2015 8:36 AM - Isaias Hernandez</h4>
+			<p class="list-group-item-text">The transmitters in the lectern and on the projector were reset. The system ran for 20 minutes on all sources without issue. We will watch this for the time being.</p>
+			</a>
+			<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">3/14/2015 12:20 PM - Diego Sanchez</h4>
+			<p class="list-group-item-text">We received another report of the flickering. Further testing is required.</p>
+			</a>
 		</div>
 		<hr>
 		<textarea class="form-control" rows="5" id="message"></textarea><br />
