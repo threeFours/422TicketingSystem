@@ -1,6 +1,6 @@
 <?php session_start(); 
 	
-	require_once("scripts/requireLogin.php");
+	//require_once("scripts/requireLogin.php");
 
 ?>
 
