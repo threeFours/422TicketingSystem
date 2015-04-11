@@ -16,11 +16,12 @@
 
 		$sql = "SELECT * FROM ticket INNER JOIN user ON user.username = ticket.creator WHERE ticket.id=".$_GET['ticket'];
 
+		echo $sql;
+
 		$result = mysqli_query($conn, $sql);
 
-		$ticketList = "";
-
 		if (mysqli_num_rows($result) == 1) {
+			echo "<br>results are not empty";
 		    while($row = mysqli_fetch_assoc($result)) {
 		    	$ticketId = $row['id'];
 		        $ticketStatus = $row['status'];
