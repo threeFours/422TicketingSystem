@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "tickeing";
+	$password = "ticketing";
 	$dbname = "letsTicket";
 
 	// Create connection
