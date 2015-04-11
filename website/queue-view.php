@@ -1,3 +1,9 @@
+<?php session_start(); 
+	
+	require_once("scripts/requireLogin.php");
+
+?>
+
 <!--Include the page header -->
 <?php require_once('templates/header2.php'); ?>
 

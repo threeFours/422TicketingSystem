@@ -1,3 +1,13 @@
+<?php session_start(); 
+
+  // if(!isset($_SESSION["userId"])){
+  //   if (basename($_SERVER['PHP_SELF']) != "login.php" || basename($_SERVER['PHP_SELF']) != "signup.php"){
+  //     header("Location: /login.php");
+  //   }
+  // }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,19 +60,26 @@
 
 
         <!-- Collect the nav links, forms, and other content for toggling -->
+        <?php if(isset($_SESSION["userId"])): ?>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">mcarmi4 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["username"]; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Administration</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="scripts/logout.php">Logout</a></li>
               </ul>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
+      <?php else: ?>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.php">Login</a></li>
+        <li><a href="signup.php">Signup</a></li>
+      </ul>
+      <?php endif; ?>
       </div><!-- /.container-fluid -->
     </nav>
     <div class="m-pageContent container">

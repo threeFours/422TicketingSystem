@@ -1,3 +1,58 @@
+<?php session_start(); 
+	
+	require_once("scripts/requireLogin.php");
+
+	if(!isset($_GET['ticket'])){
+		header("Location: /");
+	}else{
+
+		//connect to database
+		require_once('scripts/dbConn.php');
+
+		if(isset($_POST['postMessage'])){
+			$sql = "INSERT INTO message(user, message, ticket) VALUES ('".$_SESSION["userFirstName"]." ".$_SESSION["userLastName"]."', '".$_POST['message']."', ".$_GET['ticket'].")";
+			mysqli_query($conn, $sql); 
+		}
+
+		$sql = "SELECT * FROM ticket INNER JOIN user ON user.username = ticket.creator WHERE ticket.id=".$_GET['ticket'];
+
+		$result = mysqli_query($conn, $sql);
+
+		$ticketList = "";
+
+		if (mysqli_num_rows($result) == 1) {
+		    while($row = mysqli_fetch_assoc($result)) {
+		    	$ticketId = $row['id'];
+		        $ticketStatus = $row['status'];
+		        $ticketName = $row['title'];
+		        $ticketQueue = $row['queue'];
+		        $ticketCreator = $row['creator'];
+		        $ticketCC = $row['cc'];
+		        $ticketRoom = $row['room'];
+		        $ticketDateCreated = $row['dateCreated'];
+		        $ticketLastModified = $row['dateCreated'];
+		        $ticketMessage = $row['message'];
+		        $creatorFirstName = $row['firstName'];
+		        $creatorLastName = $row['lastName'];
+		    }
+		}
+
+		$sql = "SELECT * FROM message WHERE ticket=".$_GET['ticket'];
+
+		$result = mysqli_query($conn, $sql);
+
+		$messages = "";
+
+		if (mysqli_num_rows($result) > 0) {
+		    while($row = mysqli_fetch_assoc($result)) {
+		    	$messages .= "<a href='#' class='list-group-item'><h4 class='list-group-item-heading'>".$row['dateTime']." - ".$row['user']."</h4><p class='list-group-item-text'>".$row['message']."</p></a>";
+		    }
+		}
+
+	}
+
+?>
+
 <!--Include the page header -->
 <?php require_once('templates/header2.php'); ?>
 
@@ -6,27 +61,26 @@
   <li class="active">Ticket</li>
 </ol>
 
-<form>
 <div class="row">
 	<div class="col-sm-6">
 		<h2>Information</h2>
 		<hr />
 		<label>Status: </label>
-		<mark>Open</mark>
+		<mark><? echo $ticketStatus; ?></mark>
 		<br /><label>Name: </label>
-		TH 216 - Projector Flickering
+		<? echo $ticketName; ?>
 		<br /><label>Queue: </label>
-		Classrooms
+		<? echo $ticketQueue; ?>
 		<br /><label>Creator: </label>
-		aschla4
+		<? echo $ticketCreator; ?>
 		<br /><label>CC: </label>
-		mcarmi4
+		<? echo $ticketCC; ?>
 		<br /><label>Room: </label>
-		TH 216
+		<? echo $ticketRoom; ?>
 		<br /><label>Date created: </label>
-		3/13/15 04:36 PM
+		<? echo $ticketDateCreated; ?>
 		<br /><label>Last modified: </label>
-		3/14/15 12:20 PM
+		<? echo $ticketLastModified; ?>
 		<br><br>
 	</div>
 	<div class="col-sm-6">
@@ -34,41 +88,17 @@
 		<hr>
 		<div class="list-group" id="list-group-scrollable">
 			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/13/2015 4:36 PM - Alexander Schlake</h4>
-			<p class="list-group-item-text">An instructor reported the projector occasionally flickers when using the built-in PC source.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/13/2015 5:20 PM - John McDermott</h4>
-			<p class="list-group-item-text">The flickering also occurs from all other sources.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/14/2015 8:36 AM - Isaias Hernandez</h4>
-			<p class="list-group-item-text">The transmitters in the lectern and on the projector were reset. The system ran for 20 minutes on all sources without issue. We will watch this for the time being.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/14/2015 12:20 PM - Diego Sanchez</h4>
-			<p class="list-group-item-text">We received another report of the flickering. Further testing is required.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/13/2015 4:36 PM - Alexander Schlake</h4>
-			<p class="list-group-item-text">An instructor reported the projector occasionally flickers when using the built-in PC source.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/13/2015 5:20 PM - John McDermott</h4>
-			<p class="list-group-item-text">The flickering also occurs from all other sources.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/14/2015 8:36 AM - Isaias Hernandez</h4>
-			<p class="list-group-item-text">The transmitters in the lectern and on the projector were reset. The system ran for 20 minutes on all sources without issue. We will watch this for the time being.</p>
-			</a>
-			<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">3/14/2015 12:20 PM - Diego Sanchez</h4>
-			<p class="list-group-item-text">We received another report of the flickering. Further testing is required.</p>
-			</a>
+			<h4 class="list-group-item-heading"><?php echo $ticketDateCreated." - ".$creatorFirstName." ".$creatorLastName; ?></h4>
+			<p class="list-group-item-text"><?php echo $ticketMessage; ?></p>
+			
+			<?php echo $messages; ?>
 		</div>
 		<hr>
-		<textarea class="form-control" rows="5" id="message"></textarea><br />
-		<button type="button" class="btn btn-default btn-lg" id="addMessage">Add message</button>
+		<form action="" method="POST">
+			<textarea class="form-control" rows="5" name="message" id="message"></textarea><br />
+			<input name="postMessage" value="1" hidden>
+			<input type="submit" class="btn btn-default btn-lg" id="addMessage" value="Add message">
+		</form>
 		
 		<script>
 		$(document).ready(function(){
@@ -95,7 +125,6 @@
 	</div>
 </div>
 </div>
-</form>
 
 
 

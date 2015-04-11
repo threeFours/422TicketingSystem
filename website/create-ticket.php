@@ -1,3 +1,25 @@
+<?php session_start(); 
+	
+	require_once("scripts/requireLogin.php");
+
+	//connect to database
+	require_once('scripts/dbConn.php');
+
+	$sql = "SELECT * FROM queue";
+
+	$result = mysqli_query($conn, $sql);
+
+	$queueList = "";
+
+	if (mysqli_num_rows($result) > 0) {
+	    while($row = mysqli_fetch_assoc($result)) {
+	        $queueList .= "<option value='".$row["name"]."'>".$row["name"]."</option>";
+	    }
+	}
+
+	mysqli_close($conn);
+?>
+
 <!--Include the page header -->
 <?php require_once('templates/header2.php'); ?>
 
@@ -8,27 +30,21 @@
   <li class="active">Create Ticket</li>
 </ol>
 
-<form>
+<form action="/" method="post">
 <div class="row">
 	<div class="col-sm-6">
 		<h2>Information</h2>
 		<hr><br><br>
-		<label>Creator</label>
-		<input type="text" class="form-control" name="creator">
 		<label>CC</label>
 		<input type="text" class="form-control" name="cc">
 		<label>Ticket Name</label>
 		<input type="text" class="form-control" name="ticketName">
 		<label>Queue</label>
-		<input type="text" class="form-control" name="queue">
+		<select class="form-control" name="queue">
+			<?php echo $queueList; ?>
+		</select>
 		<label>Room</label>
 		<input type="text" class="form-control" name="room">
-		<label>Status</label>
-		<select class="form-control">
-			<option>New</option>
-			<option>Open</option>
-			<option>Resolved</option>
-		</select>
 		<br />
 	</div>	
 	<div class="col-sm-6">
@@ -37,19 +53,22 @@
 		<label>Message</label>
 		<textarea name="message" class="form-control" rows="10"></textarea>
 		<br><br>
-		<label>Attach a File</label>
-		<input type="file" name="file" />
-		<br><br>
 	</div>
 </div>
 <div class="row">
 	<div class="col-xs-12" style="text-align:center">
+		<input name="newTicket" value="1" hidden>
 		<input type="submit" class="btn btn-primary btn-lg" value="Create Ticket">
 		<br><br>
 	</div>
 </div>
 </form>
 
+<!-- 
+			<option>New</option>
+			<option>Open</option>
+			<option>Resolved</option>
+ -->
 
 
 <!-- Include the page footer -->
