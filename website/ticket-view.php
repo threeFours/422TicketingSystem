@@ -16,8 +16,6 @@
 
 		$sql = "SELECT * FROM ticket INNER JOIN user ON user.username = ticket.creator WHERE ticket.id=".$_GET['ticket'];
 
-		echo $sql;
-
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) == 1) {
@@ -35,7 +33,6 @@
 		        $creatorFirstName = $row['firstName'];
 		        $creatorLastName = $row['lastName'];
 		    }
-		    echo "<br> Ticket Name: ".$ticketName;
 		}
 
 		$sql = "SELECT * FROM message WHERE ticket=".$_GET['ticket'];
@@ -67,21 +64,21 @@
 		<h2>Information</h2>
 		<hr />
 		<label>Status: </label>
-		<mark><? echo $ticketStatus; ?></mark>
+		<mark><?php echo $ticketStatus; ?></mark>
 		<br /><label>Name: </label>
-		<? echo $ticketName; ?>
+		<?php echo $ticketName; ?>
 		<br /><label>Queue: </label>
-		<? echo $ticketQueue; ?>
+		<?php echo $ticketQueue; ?>
 		<br /><label>Creator: </label>
-		<? echo $ticketCreator; ?>
+		<?php echo $ticketCreator; ?>
 		<br /><label>CC: </label>
-		<? echo $ticketCC; ?>
+		<?php echo $ticketCC; ?>
 		<br /><label>Room: </label>
-		<? echo $ticketRoom; ?>
+		<?php echo $ticketRoom; ?>
 		<br /><label>Date created: </label>
-		<? echo $ticketDateCreated; ?>
+		<?php echo $ticketDateCreated; ?>
 		<br /><label>Last modified: </label>
-		<? echo $ticketLastModified; ?>
+		<?php echo $ticketLastModified; ?>
 		<br><br>
 	</div>
 	<div class="col-sm-6">
