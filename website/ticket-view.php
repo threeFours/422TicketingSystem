@@ -21,7 +21,6 @@
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) == 1) {
-			echo "<br>results are not empty";
 		    while($row = mysqli_fetch_assoc($result)) {
 		    	$ticketId = $row['id'];
 		        $ticketStatus = $row['status'];
@@ -36,6 +35,7 @@
 		        $creatorFirstName = $row['firstName'];
 		        $creatorLastName = $row['lastName'];
 		    }
+		    echo "<br> Ticket Name: ".$ticketName;
 		}
 
 		$sql = "SELECT * FROM message WHERE ticket=".$_GET['ticket'];
