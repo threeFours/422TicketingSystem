@@ -47,7 +47,7 @@
 
 		if (mysqli_num_rows($result) > 0) {
 		    while($row = mysqli_fetch_assoc($result)) {
-		        $queueList .= "<a href='ticket-view.php?queue=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['name']."</h4></a>";
+		        $queueList .= "<a href='ticket-view.php?queue=".$row['name']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['name']."</h4></a>";
 		    }
 		}
 
