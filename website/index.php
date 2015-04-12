@@ -10,6 +10,8 @@
 
 <?php
 	
+	require_once("scripts/requireLogin.php");
+
 	//connect to database
 	require_once('scripts/dbConn.php');
 
@@ -34,7 +36,7 @@
 
 		if (mysqli_num_rows($result) > 0) {
 		    while($row = mysqli_fetch_assoc($result)) {
-		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']."</h4></a>";
+		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']." - ".$row['creator']." (".$row['dateCreated'].")</h4></a>";
 		    }
 		}
 

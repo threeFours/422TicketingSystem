@@ -48,6 +48,11 @@
           <a class="navbar-brand" href="index.php">Ticketing System</a>
         </div>
 
+        <ul class="nav navbar-nav">
+          <li><a href="/create-ticket.php">Create Ticket</a></li>
+          <li><a href="/">Queues</a></li>
+        </ul>
+
 
         <form class="navbar-form navbar-left" role="search">
           <div class="input-group">

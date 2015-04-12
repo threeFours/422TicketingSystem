@@ -49,6 +49,14 @@
 
 	}
 
+	if($ticketStatus == "Open"){
+		$statusColor = "class='alert-sm alert-warning'";
+	}else if($ticketStatus == "New"){
+		$statusColor = "class='alert-sm alert-success'";
+	}else{
+		$statusColor = "class='alert-sm alert-danger'";
+	}
+
 ?>
 
 <!--Include the page header -->
@@ -64,7 +72,7 @@
 		<h2>Information</h2>
 		<hr />
 		<label>Status: </label>
-		<mark><?php echo $ticketStatus; ?></mark>
+		<mark <?php echo $statusColor; ?>><?php echo $ticketStatus; ?></mark>
 		<br /><label>Name: </label>
 		<?php echo $ticketName; ?>
 		<br /><label>Queue: </label>
@@ -80,6 +88,17 @@
 		<br /><label>Last modified: </label>
 		<?php echo $ticketLastModified; ?>
 		<br><br>
+		<!-- Single button -->
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+		    Update Ticket Status <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li <?php if ($ticketStatus == "New") echo "class='disabled'"; ?>><a href="/scripts/change-status.php?status=New&ticket=<?php echo $_GET['ticket']; ?>">New</a></li>
+		    <li <?php if ($ticketStatus == "Open") echo "class='disabled'"; ?>><a href="/scripts/change-status.php?status=Open&ticket=<?php echo $_GET['ticket']; ?>">Open</a></li>
+		    <li <?php if ($ticketStatus == "Closed") echo "class='disabled'"; ?>><a href="/scripts/change-status.php?status=Closed&ticket=<?php echo $_GET['ticket']; ?>">Closed</a></li>
+		  </ul>
+		</div>
 	</div>
 	<div class="col-sm-6">
 		<h2>History</h2>

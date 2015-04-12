@@ -6,15 +6,13 @@
 	// get all tickets
 		$sql = "SELECT * FROM ticket WHERE queue='".$_GET['queue']."'";
 
-		echo $sql;
-
 		$result = mysqli_query($conn, $sql);
 
 		$ticketList = "";
 
 		if (mysqli_num_rows($result) > 0) {
 		    while($row = mysqli_fetch_assoc($result)) {
-		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']."</h4></a>";
+		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']." - ".$row['creator']." (".$row['dateCreated'].")</h4></a>";
 		    }
 		}
 
@@ -33,7 +31,7 @@
 <form>
 <div class="row">
 	<div class="col-sm-6">
-		<h2>Tickets</h2>
+		<h2><?php echo $_GET['queue']; ?> Tickets</h2>
 		<div class="list-group">
 			<?php echo $ticketList; ?>
 		</div>
