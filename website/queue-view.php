@@ -2,6 +2,24 @@
 	
 	require_once("scripts/requireLogin.php");
 
+	require_once('scripts/dbConn.php');
+	// get all tickets
+		$sql = "SELECT * FROM ticket WHERE queue='".$_GET['queue']."'";
+
+		echo $sql;
+
+		$result = mysqli_query($conn, $sql);
+
+		$ticketList = "";
+
+		if (mysqli_num_rows($result) > 0) {
+		    while($row = mysqli_fetch_assoc($result)) {
+		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']."</h4></a>";
+		    }
+		}
+
+		mysqli_close($conn);
+
 ?>
 
 <!--Include the page header -->
@@ -17,18 +35,7 @@
 	<div class="col-sm-6">
 		<h2>Tickets</h2>
 		<div class="list-group">
-			<a href="ticket-view.php" class="list-group-item">
-			<h4 class="list-group-item-heading">TH 216 - Projector Flickering</h4>
-			</a>
-			<a href="ticket-view.php" class="list-group-item">
-			<h4 class="list-group-item-heading">LC A1 - Keyboard and mouse unresponsive</h4>
-			</a>
-			<a href="ticket-view.php" class="list-group-item">
-			<h4 class="list-group-item-heading">LC C6 - Wireless mic low volume</h4>
-			</a>
-			<a href="ticket-view.php" class="list-group-item">
-			<h4 class="list-group-item-heading">SES 138 - Projector not responsing to touch panel</h4>
-			</a>
+			<?php echo $ticketList; ?>
 		</div>
 	</div>
 	<div class="col-sm-6">
