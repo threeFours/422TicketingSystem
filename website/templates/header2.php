@@ -54,14 +54,14 @@
         </ul>
 
 
-       <!--  <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search">
           <div class="input-group">
             <input type="text" class="form-control m-input-search" placeholder="Search for...">
             <span class="input-group-btn">
               <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
           </div>
-        </form> -->
+        </form>
 
 
         <!-- Collect the nav links, forms, and other content for toggling -->
