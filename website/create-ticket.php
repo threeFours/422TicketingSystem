@@ -36,15 +36,15 @@
 		<h2>Information</h2>
 		<hr><br><br>
 		<label>CC</label>
-		<input type="text" class="form-control" name="cc">
+		<input type="text" class="form-control" name="cc" pattern="[a-zA-Z0-9]+" title="Please enter a valid username." required>
 		<label>Ticket Name</label>
-		<input type="text" class="form-control" name="ticketName">
+		<input type="text" class="form-control" name="ticketName" required>
 		<label>Queue</label>
-		<select class="form-control" name="queue">
+		<select class="form-control" name="queue" required>
 			<?php echo $queueList; ?>
 		</select>
 		<label>Room</label>
-		<input type="text" class="form-control" name="room">
+		<input type="text" class="form-control" name="room" required>
 		<br />
 	</div>	
 	<div class="col-sm-6">

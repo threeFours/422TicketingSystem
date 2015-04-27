@@ -2,6 +2,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "ticketing";
+	//$password = "root";
 	$dbname = "letsTicket";
 
 	// Create connection

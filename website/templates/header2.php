@@ -71,8 +71,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["username"]; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Administration</a></li>
+                <li><a href="/settings.php">Settings</a></li>
+                <li class="disabled"><a href="#">Administration</a></li>
                 <li class="divider"></li>
                 <li><a href="scripts/logout.php">Logout</a></li>
               </ul>
