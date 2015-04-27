@@ -11,8 +11,6 @@
 
 		$sql = "UPDATE user SET username='".$_POST['username']."', firstName='".$_POST['firstName']."', lastName='".$_POST['lastName']."' WHERE id=".$_SESSION["userId"];
 		
-		echo $sql;
-
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION["username"] = $_POST['username'];
 			$_SESSION["userFirstName"] = $_POST['firstName'];
