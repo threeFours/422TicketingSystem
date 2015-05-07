@@ -30,7 +30,21 @@
 	}
 
 	// get all tickets
-		$sql = "SELECT * FROM ticket";
+
+		$selected = ["", "", ""];
+
+		if ($_GET['t'] == "All"){
+			$where = 1;
+			$selected[2] = "style='background-color:#35638F; color:#e7e7e7'";
+		}else if ($_GET['t'] == "Closed") {
+			$where = "status='Closed'";
+			$selected[1] = "style='background-color:#35638F; color:#e7e7e7'";
+		}else{
+			$where = "status='New' OR status='Open'";
+			$selected[0] = "style='background-color:#35638F; color:#e7e7e7'";
+		}
+
+		$sql = "SELECT * FROM ticket WHERE ".$where;
 
 		$ticResult = mysqli_query($conn, $sql);
 
@@ -67,8 +81,14 @@
 </div>
 <div class="row">
 	<div class="col-sm-6">
-		<h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Incoming Tickets (<?php echo mysqli_num_rows($ticResult); ?>)</h2>
+		<h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <?php echo $_GET['t']; ?> Tickets (<?php echo mysqli_num_rows($ticResult); ?>)</h2>
 		<hr />
+		<div class="btn-group" role="group" aria-label="...">
+		  <a href="/tickets-and-queues.php?t=New and Open" class="btn btn-default btn-xs" <?php echo $selected[0]; ?>>New & Open</a>
+		  <a href="/tickets-and-queues.php?t=Closed" class="btn btn-default btn-xs" <?php echo $selected[1]; ?>>Closed</a>
+		  <a href="/tickets-and-queues.php?t=All" class="btn btn-default btn-xs" <?php echo $selected[2]; ?>>All</a>
+		</div>
+		<br/><br/>
 		<div class="list-group">
 			<?php echo $ticketList; ?>
 		</div>
