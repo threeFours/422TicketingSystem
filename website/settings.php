@@ -36,7 +36,7 @@
 <form action="" method="POST">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>Settings</h2>
+			<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</h2>
 			<hr><br><br>
 			<label>First Name</label>
 			<input type="text" value="<?php echo $_SESSION["userFirstName"]; ?>" class="form-control" name="firstName" pattern="[a-zA-Z]+" title="Names must only contain letters and be at least one character long."><br>

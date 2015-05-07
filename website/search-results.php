@@ -4,7 +4,7 @@
 
 	require_once('scripts/dbConn.php');
 	// get all tickets
-		$sql = "SELECT * FROM ticket WHERE queue='".$_GET['queue']."'";
+		$sql = "SELECT * FROM ticket WHERE title LIKE '%".$_GET['search']."%'";
 
 		$result = mysqli_query($conn, $sql);
 
@@ -14,6 +14,8 @@
 		    while($row = mysqli_fetch_assoc($result)) {
 		        $ticketList .= "<a href='ticket-view.php?ticket=".$row['id']."' class='list-group-item'><h4 class='list-group-item-heading'>".$row['title']." - ".$row['creator']." (".$row['dateCreated'].")<span class='glyphicon glyphicon-option-horizontal pull-right' aria-hidden='true'></span></h4></a>";
 		    }
+		}else{
+			$ticketList = "0 Restults for ".$_GET['search'];
 		}
 
 		mysqli_close($conn);
@@ -25,13 +27,13 @@
 
 <ol class="breadcrumb">
   <li><a href="index.php">Home</a></li>
-  <li class="active"><?php echo $_GET['queue']; ?> Queue</li>
+  <li class="active">Search Results</li>
 </ol>
 
 <form>
 <div class="row">
 	<div class="col-sm-6">
-		<h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <?php echo $_GET['queue']; ?> Tickets (<?php echo mysqli_num_rows($result); ?>)</h2>
+		<h2><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search Results (<?php echo mysqli_num_rows($result); ?>)</h2>
 		<hr/><br/>
 		<div class="list-group">
 			<?php echo $ticketList; ?>

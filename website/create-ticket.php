@@ -33,7 +33,7 @@
 <form action="/" method="post">
 <div class="row">
 	<div class="col-sm-6">
-		<h2>Information</h2>
+		<h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Information</h2>
 		<hr><br><br>
 		<label>CC</label>
 		<input type="text" class="form-control" name="cc" pattern="[a-zA-Z0-9]+" title="Please enter a valid username." required>
@@ -48,7 +48,7 @@
 		<br />
 	</div>	
 	<div class="col-sm-6">
-		<h2>Message</h2>
+		<h2><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Message</h2>
 		<hr><br><br>
 		<label>Message</label>
 		<textarea name="message" class="form-control" rows="10"></textarea>
@@ -63,12 +63,6 @@
 	</div>
 </div>
 </form>
-
-<!-- 
-			<option>New</option>
-			<option>Open</option>
-			<option>Resolved</option>
- -->
 
 
 <!-- Include the page footer -->

@@ -6,6 +6,12 @@
   //   }
   // }
 
+  if($_SESSION['isAdmin'] == 1){
+    $dis = "";
+  }else{
+    $dis = "disabled";
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,23 +51,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Ticketing System</a>
+          <a class="navbar-brand" href="/">Ticketing System</a>
         </div>
 
         <ul class="nav navbar-nav">
-          <li><a href="/">Tickets & Queues</a></li>
-          <li><a href="/create-ticket.php">Create Ticket</a></li>
+          <li><a href="/tickets-and-queues.php"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Tickets & Queues</a></li>
+          <li><a href="/create-ticket.php"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Create Ticket</a></li>
         </ul>
 
 
-       <!--  <form class="navbar-form navbar-left" role="search">
+       <form class="navbar-form navbar-left" action="/search-results.php" method="GET" role="search">
           <div class="input-group">
-            <input type="text" class="form-control m-input-search" placeholder="Search for...">
+            <input type="text" class="form-control m-input-search" name="search" placeholder="Search for...">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
           </div>
-        </form> -->
+        </form>
 
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,12 +75,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["username"]; ?> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  <?php echo $_SESSION["username"]; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="/settings.php">Settings</a></li>
-                <li class="disabled"><a href="#">Administration</a></li>
+                <li><a href="/settings.php"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+                <li class="<?php echo $dis; ?>"><a href="admin.php"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Administration</a></li>
+                <li><a href="/bookmarked-tickets.php"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Bookmarked Tickets</a></li>
                 <li class="divider"></li>
-                <li><a href="scripts/logout.php">Logout</a></li>
+                <li><a href="scripts/logout.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
               </ul>
             </li>
           </ul>

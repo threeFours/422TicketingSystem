@@ -44,7 +44,7 @@
 <form action="" method="POST">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>Signup</h2>
+			<h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Signup</h2>
 			<hr><br><br>
 			<label>First Name</label>
 			<input type="text" class="form-control" name="firstName" pattern="[a-zA-Z]+" title="Names must only contain letters and be at least one character long."><br>

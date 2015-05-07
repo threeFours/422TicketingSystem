@@ -4,7 +4,7 @@
 		//connect to database
 		require_once('scripts/dbConn.php');
 
-		$sql = "SELECT id, firstName, lastName FROM user WHERE username='".$_POST['username']."' AND password='".$_POST['password']."'";
+		$sql = "SELECT id, firstName, lastName, isAdmin FROM user WHERE username='".$_POST['username']."' AND password='".$_POST['password']."'";
 
 		$result = mysqli_query($conn, $sql);
 
@@ -14,8 +14,9 @@
 		        $_SESSION["username"] = $_POST['username'];
 		        $_SESSION["userFirstName"] = $row['firstName'];
 		        $_SESSION["userLastName"] = $row['lastName'];
+		        $_SESSION["isAdmin"] = $row['isAdmin'];
 
-		        header("Location: /");
+		        header("Location: /tickets-and-queues.php");
 		    }
 		} else {
 		    $loginFailed = 1;
@@ -39,7 +40,7 @@
 <form action="" method="POST">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>Login</h2>
+			<h2><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login</h2>
 			<hr>
 			<br>
 			<?php if($loginFailed == 1): ?>
