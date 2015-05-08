@@ -44,7 +44,7 @@
 			$selected[0] = "style='background-color:#35638F; color:#e7e7e7'";
 		}
 
-		$sql = "SELECT * FROM ticket WHERE ".$where;
+		$sql = "SELECT * FROM ticket WHERE ".$where." ORDER BY dateCreated DESC";
 
 		$ticResult = mysqli_query($conn, $sql);
 
