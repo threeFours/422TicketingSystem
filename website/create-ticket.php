@@ -30,7 +30,7 @@
   <li class="active">Create Ticket</li>
 </ol>
 
-<form action="/" method="post">
+<form action="/tickets-and-queues.php" method="post">
 <div class="row">
 	<div class="col-sm-6">
 		<h2><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Information</h2>
